@@ -20,9 +20,8 @@ function getTimestampAndUTC(dateString) {
     date = new Date();
   } else {
     // Comprobamos si dateString es un número (timestamp)
-    const timestamp = parseInt(dateString);
-    if (!isNaN(timestamp)) {
-      date = new Date(timestamp);
+    if (!isNaN(dateString) && !isNaN(parseFloat(dateString))) {
+      date = new Date(parseInt(dateString));
     } else {
       // Si no es un número, tratamos de parsearlo como una fecha
       date = new Date(dateString);
